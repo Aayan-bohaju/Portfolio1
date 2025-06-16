@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+ 
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .skill{
+            background-color: rgb(130, 185, 233);
+            padding-bottom: 10px;
+            gap: 10px;
+        }
+        #new{
+            margin-bottom: 20px;
+        }
+        #main{
+            background-color:rgb(197, 197, 197) ;
+            border: 1px solid;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin: 30px 30px 30px 30px;
+            border-radius: 30px;
+        }
+        #ayn{
+            font-weight:100;
+        }
+        .box{
+            min-width: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 5px;
+            margin-left:5px ;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border-radius: 10px;
+            background-color:#B3DFFC;
+            border: solid 1px;
+        }
+          body{
+          background-color:rgb(116, 173, 219) ;
+        }
+        .nav{
+            height: 80px;
+            grid-column: 1/-1;
+            display: flex;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+           justify-content: space-evenly;
+           align-items: center;
+        }
+        .footer{
+            height:50px ;
+            grid-column:1/-1;
+              border-radius: 30px;
+        }
+        .side{
+              border-radius: 30px;
+            grid-column:1/-1;
+            height:100px ;
+        }
+        h1{
+            display: flex;
+            justify-content: space-around;
+        font-size: 50px;
+         font-weight: bolder;
+        }
+        .btn{
+            background-color: rgb(23, 148, 206);
+            min-width: 100px;
+            border-radius: 10px;
+            border: 1px solid;
+            height: 80%;
+            font-weight:bolder;
+        }
+#foot{
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+}
+#a{
+    text-decoration: none;
+    font-size: 15px;
+    color: rgb(255, 255, 255);
+    font-size: large;
+}
+ 
+.btn{
+    background-color: #2990e4;
+    color: #112233;
+    transition: background-color 0.4s ease;
+  }
+   .btn:hover {
+    background-color: #096aa1; 
+  }
+  .body{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  p{
+    margin-left: 20px;
+  }
+  h2{
+    margin-left: 20px;
+  }
+  h3{
+    margin-left: 20px;
+  }
+ 
+    button:hover {
+      background-color: #2ea043;
+      transform: translateY(-2px);
+    }
+@media(max-width:600px){
+ 
+.nav{ display: grid;
+grid-template-columns: 1fr;
+justify-content: center;
+align-items: center;
+height: 200px;
+}
+ 
+ 
+.btn{
+ 
+ height: 75%;
+}
+h1{
+ color: rgb(0, 0, 0);
+ font-weight: bolder;
+}
+#ayn{
+    font-size:40px;
+    font-weight:100;
+}
+}
+    </style>
+</head>
+<body>
+    <div id="main">
+     <div class="box side"> 
+        <h1 id="ayn"> Aayan Bohaju</h1>
+    </div>
+     <div class=" box nav">
+        <button class="btn"> <a href="about.html" id="a">About Me</a></button>
+        <button class="btn"><a href="interest.html" id="a">My Interests</a></button>
+        <button class="btn"><a href="skill.html" id="a">Skills</a></button>
+        <button class="btn"> <a href="contact.html" id="a"> Contact Me</a> </button>
+     </div>
+     <div class=" box body">
+   <h1>My Skills</h1>
+ 
+  <div class="skills-container">
+    <div class="skill">
+      <h2>💻 HTML</h2>
+      <p>I use HTML to build the structure of websites, organizing content clearly and semantically.</p>
+    </div>
+ 
+    <div class="skill">
+      <h2>🎨 CSS</h2>
+      <p>I design beautiful and responsive layouts using modern CSS features like Flexbox and media queries.</p>
+    </div>
+ 
+    <div class="skill">
+      <h2>🧠 JavaScript</h2>
+      <p>I use JavaScript to make websites interactive—handling logic, user actions, and dynamic effects.</p>
+    </div>
+ 
+    <div class="skill">
+      <h2>📱 Mobile Gaming</h2>
+      <p>Gaming improves my focus, reflexes, and reaction time. I also analyze game mechanics and strategies.</p>
+    </div>
+ 
+    <div class="skill">
+      <h2>♟️ Chess</h2>
+      <p>Chess has taught me how to think ahead, plan strategies, and stay calm under pressure.</p>
+    </div>
+ 
+    <div class="skill">
+      <h2>⚙️ Problem Solving</h2>
+      <p>Whether it’s coding bugs or logic puzzles, I love breaking down problems and finding smart solutions.</p>
+    </div>
+ 
+    <div class="skill">
+      <h2>🧠 Self-Learning</h2>
+      <p>I enjoy learning new skills through online resources and practice—especially in tech and design.</p>
+    </div>
+ 
+    <div class="skill">
+      <h2>📚 Research</h2>
+      <p>I know how to search effectively, find reliable answers, and learn from documentation or tutorials.</p>
+    </div>
+ 
+    <div class="skill">
+      <h2>🌐 Basic Web Development</h2>
+      <p>I combine HTML, CSS, and JavaScript to create simple, functional websites that look clean and modern.</p>
+    </div>
+ 
+    <div class="skill">
+      <h2>🎯 Focus & Patience</h2>
+      <p>Through coding, gaming, and chess, I’ve developed strong focus and patience—key for learning and solving problems.</p>
+    </div>
+  </div>
+     </div>
+     <div class=" box footer">
+        <p id="foot"> &copy; All Rights Preserved. <a href="">Learn more.</a></p>
+     </div>
+    </div>
+</body>
+</html>
