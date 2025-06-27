@@ -3,8 +3,8 @@
 <head>
   <title>Mini Quiz</title>
   <style>
-    h1{
-        color: rgb(106, 125, 207);
+    h1 {
+      color: rgb(106, 125, 207);
     }
     body {
       background: #a9dce2;
@@ -13,6 +13,8 @@
       align-items: center;
       height: 96vh;
       font-family: sans-serif;
+      margin: 0;
+      padding: 0;
     }
     .box {
       background: #ffffff;
@@ -31,9 +33,14 @@
       background: #5fd694;
       cursor: pointer;
       font-size: 16px;
+      transition: background 0.3s ease;
     }
-    button:hover { background: #299b6f; }
-    .wrong { background: #e24756 !important; }
+    button:hover {
+      background: #299b6f;
+    }
+    .wrong {
+      background: #e24756 !important;
+    }
     #restart {
       display: none;
       background: #00796b;
@@ -45,18 +52,55 @@
       font-size: 18px;
       font-weight: bold;
     }
-    .pass { color: green; }
-    .fail { color: red; }
+    .pass {
+      color: green;
+    }
+    .fail {
+      color: red;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 600px) {
+      body {
+        height: 100vh;
+        padding: 10px;
+      }
+      .box {
+        width: 100%;
+        max-width: 350px;
+        padding: 15px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      h2#q {
+        font-size: 1.2rem;
+      }
+      button {
+        font-size: 14px;
+        padding: 12px;
+      }
+      #result {
+        font-size: 16px;
+      }
+      a {
+        display: inline-block;
+        margin-top: 10px;
+        font-size: 14px;
+        text-decoration: none;
+        color: #1066c9;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="box">
-    <h1> MINI  QUIZ</h1>
+    <h1>MINI QUIZ</h1>
     <h2 id="q">Loading...</h2>
     <div id="options"></div>
     <div id="result"></div>
     <button id="restart" onclick="location.reload()">Restart</button>
-  <a href="index.html">back to home</a>
+    <a href="index.html">back to home</a>
   </div>
 
   <script>
@@ -136,7 +180,6 @@
       opt.innerHTML = "";
       document.getElementById("restart").style.display = "block";
 
-      // Show pass/fail message inside the box
       if (score >= 7) {
         result.innerHTML = "<span class='pass'>✅ You passed!</span>";
       } else {
