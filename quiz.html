@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini Quiz</title>
+  <style>
+    h1{
+        color: rgb(106, 125, 207);
+    }
+    body {
+      background: #a9dce2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 96vh;
+      font-family: sans-serif;
+    }
+    .box {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 390px;
+      box-shadow: 0 0 10px #aaa;
+      text-align: center;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      border-radius: 5px;
+      background: #5fd694;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover { background: #299b6f; }
+    .wrong { background: #e24756 !important; }
+    #restart {
+      display: none;
+      background: #00796b;
+      color: #fff;
+      margin-top: 10px;
+    }
+    #result {
+      margin-top: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .pass { color: green; }
+    .fail { color: red; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1> MINI  QUIZ</h1>
+    <h2 id="q">Loading...</h2>
+    <div id="options"></div>
+    <div id="result"></div>
+    <button id="restart" onclick="location.reload()">Restart</button>
+  <a href="index.html">back to home</a>
+  </div>
+
+  <script>
+    const quiz = [
+      ["What is the full form of HTML?", "Hypertext Markup Language", [
+        "Hypertext Markup Language", "HighText Machine Language", "Hyperloop Mark Language", "Hypertext Markdown Language"
+      ]],
+      ["What is the full form of CSS?", "Cascading Style Sheets", [
+        "Creative Style Sheets", "Cascading Style Sheets", "Colorful Style Syntax", "Computer Style Setup"
+      ]],
+      ["What is the full form of JS?", "JavaScript", [
+        "JustScript", "JavaSuper", "JavaScript", "JumpStart"
+      ]],
+      ["What is the full form of CPU?", "Central Processing Unit", [
+        "Computer Processing Unit", "Central Processing Unit", "Control Power Unit", "Central Program Utility"
+      ]],
+      ["How many provinces are there in Nepal?", "7", [
+        "5", "6", "7", "9"
+      ]],
+      ["What is the molecular formula of water?", "H2O", [
+        "H2O", "O2", "CO2", "HO2"
+      ]],
+      ["Which gas is crucial for survival of living beings?", "Oxygen", [
+        "Carbon Dioxide", "Oxygen", "Nitrogen", "Hydrogen"
+      ]],
+      ["What is the color of the sky?", "Blue", [
+        "Red", "Green", "Blue", "Yellow"
+      ]],
+      ["What is the full form of WWW?", "World Wide Web", [
+        "World Wide Web", "Web World Wide", "Wide Web World", "World Web Window"
+      ]],
+      ["What is the height of Mt. Everest?", "8848 meters", [
+        "9000 meters", "8848 meters", "8840 meters", "8999 meters"
+      ]],
+      ["Which is the tallest mountain in the world?", "Mount Everest", [
+        "Mount K2", "Mount Everest", "Mount Annapurna", "Mount Makalu"
+      ]],
+      ["Which HTML tag is used to write JavaScript?", "<script>", [
+        "<style>", "<js>", "<script>", "<code>"
+      ]],
+      ["Which is the world's smallest country?", "Vatican City", [
+        "Monaco", "Malta", "Vatican City", "San Marino"
+      ]],
+      ["Which is the world's smallest continent?", "Australia", [
+        "Antarctica", "Australia", "Europe", "South America"
+      ]],
+      ["Which mammal can fly?", "Bat", [
+        "Owl", "Bat", "Penguin", "Squirrel"
+      ]]
+    ];
+
+    let i = 0, score = 0;
+    const q = document.getElementById("q");
+    const opt = document.getElementById("options");
+    const result = document.getElementById("result");
+    const next = () => i < quiz.length ? show() : end();
+
+    function show() {
+      q.textContent = quiz[i][0];
+      opt.innerHTML = "";
+      result.textContent = "";
+      quiz[i][2].forEach(a => {
+        let b = document.createElement("button");
+        b.textContent = a;
+        b.onclick = () => {
+          if (a === quiz[i][1]) score++;
+          else b.classList.add("wrong");
+          i++;
+          setTimeout(next, 400);
+        };
+        opt.appendChild(b);
+      });
+    }
+
+    function end() {
+      q.innerHTML = `🎉 Quiz Complete!<br><strong>Score: ${score} / ${quiz.length}</strong>`;
+      opt.innerHTML = "";
+      document.getElementById("restart").style.display = "block";
+
+      // Show pass/fail message inside the box
+      if (score >= 7) {
+        result.innerHTML = "<span class='pass'>✅ You passed!</span>";
+      } else {
+        result.innerHTML = "<span class='fail'>❌ You failed.</span>";
+      }
+    }
+
+    show();
+  </script>
+</body>
+</html>
